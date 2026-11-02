@@ -1,0 +1,146 @@
+/* ==========================================================================
+   Responsive & TV Display Safe-Area Engine
+   Optimized for 4K Ultra HD (3840x2160), Full HD (1920x1080), 720p,
+   and standard desktop browsers.
+   ========================================================================== */
+
+/* 4K Television Displays (3840 x 2160 and above) */
+@media (min-width: 2560px) {
+  :root {
+    --tv-safe-padding-x: 6vw;
+    --tv-safe-padding-y: 5.5vh;
+  }
+
+  html, body {
+    font-size: 24px;
+  }
+
+  .game-card {
+    flex: 0 0 210px;
+    height: 210px;
+  }
+
+  .stage-title {
+    font-size: 4.5rem;
+  }
+
+  .stage-desc {
+    font-size: 1.6rem;
+  }
+
+  .btn-ps5 {
+    padding: 18px 52px;
+    font-size: 1.6rem;
+  }
+
+  .activity-card {
+    flex: 0 0 460px;
+    height: 130px;
+    padding: 20px 26px;
+  }
+
+  .activity-title {
+    font-size: 1.4rem;
+  }
+
+  .activity-desc {
+    font-size: 1.1rem;
+  }
+
+  .control-center-dock {
+    height: 110px;
+  }
+
+  .cc-item {
+    width: 68px;
+    height: 68px;
+  }
+
+  .cc-item svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Full HD Television & Laptops (1920 x 1080) */
+@media (max-width: 1920px) and (min-width: 1280px) {
+  .stage-title {
+    font-size: 3rem;
+  }
+}
+
+/* Medium Screens / 720p (1280 x 720) */
+@media (max-width: 1280px) {
+  :root {
+    --tv-safe-padding-x: 4vw;
+    --tv-safe-padding-y: 3.5vh;
+  }
+
+  html, body {
+    font-size: 14px;
+  }
+
+  .game-card {
+    flex: 0 0 115px;
+    height: 115px;
+  }
+
+  .stage-title {
+    font-size: 2.2rem;
+  }
+
+  .stage-desc {
+    font-size: 1rem;
+  }
+
+  .activity-card {
+    flex: 0 0 260px;
+    height: 84px;
+    padding: 10px 14px;
+  }
+
+  .stage-header {
+    max-width: 80%;
+  }
+}
+
+/* Small displays & Preview */
+@media (max-width: 800px) {
+  :root {
+    --tv-safe-padding-x: 16px;
+    --tv-safe-padding-y: 16px;
+  }
+
+  .top-tabs-group {
+    gap: 16px;
+  }
+
+  .nav-tab {
+    font-size: 1.25rem;
+  }
+
+  .top-actions-group {
+    gap: 10px;
+  }
+
+  .game-card {
+    flex: 0 0 100px;
+    height: 100px;
+  }
+
+  .stage-title {
+    font-size: 1.8rem;
+  }
+
+  .stage-header {
+    max-width: 100%;
+  }
+
+  .game-stage-actions {
+    flex-wrap: wrap;
+  }
+
+  .activity-card {
+    flex: 0 0 220px;
+  }
+}

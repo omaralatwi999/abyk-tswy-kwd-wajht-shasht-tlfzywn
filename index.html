@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>PlayStation 5 TV Dashboard | واجهة شاشة تلفزيون سوني 5</title>
+  
+  <!-- Preconnect and Google Fonts for authentic sleek modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <!-- Favicon PS5 style -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='6' fill='%2300439c'/><path d='M7 6h10v3H7zm0 5h10v3H7zm0 5h10v3H7z' fill='%23ffffff'/></svg>" />
+</head>
+<body class="airmouse-mode">
+
+  <!-- Dual Dynamic Background Layers with GPU-accelerated Crossfade -->
+  <div id="bg-layer-1" class="bg-layer"></div>
+  <div id="bg-layer-2" class="bg-layer"></div>
+  <div class="bg-overlay-gradient"></div>
+  <div class="bg-ambient-glow"></div>
+  <div class="ps5-particles-overlay"></div>
+
+  <!-- Main Television Stage Viewport -->
+  <main id="ps5-screen-container">
+
+    <!-- Top Navigation Bar (Tabs & Status Icons) -->
+    <header class="ps5-top-bar">
+      <!-- Games & Media Tabs -->
+      <nav class="top-tabs-group" aria-label="Main Navigation">
+        <button id="tab-games" class="nav-tab top-nav-item active" data-tab="games" data-nav-item="true">
+          <span data-i18n-ar="ألعاب" data-i18n-en="Games">ألعاب</span>
+        </button>
+        <button id="tab-media" class="nav-tab top-nav-item" data-tab="media" data-nav-item="true">
+          <span data-i18n-ar="وسائط" data-i18n-en="Media">وسائط</span>
+        </button>
+      </nav>
+
+      <!-- Action & Profile Group -->
+      <div class="top-actions-group">
+        <!-- Search Button -->
+        <button id="btn-top-search" class="top-icon-btn top-nav-item" data-nav-item="true" title="بحث (Search)">
+          <svg viewBox="0 0 24 24">
+            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+        </button>
+
+        <!-- Settings Button -->
+        <button id="btn-top-settings" class="top-icon-btn top-nav-item" data-nav-item="true" title="الإعدادات (Settings)">
+          <svg viewBox="0 0 24 24">
+            <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+          </svg>
+        </button>
+
+        <!-- User Profile Pill -->
+        <div id="btn-top-profile" class="top-profile-badge top-nav-item" data-nav-item="true" title="الملف الشخصي (Profile)">
+          <div class="avatar-wrapper">
+            <img class="avatar-img" src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=150&auto=format&fit=crop&q=80" alt="Avatar" />
+            <span class="online-dot"></span>
+          </div>
+          <div class="trophy-status">
+            <svg viewBox="0 0 24 24" class="trophy-mini-icon">
+              <path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/>
+            </svg>
+            <span>428</span>
+          </div>
+          <span id="ps5-clock" class="ps5-clock">12:00</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Carousel Ribbon (PS5 Games & Apps Horizontal Shelf) -->
+    <section class="shelf-container-wrapper" aria-label="Game Shelf">
+      <div id="games-shelf" class="games-shelf">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </section>
+
+    <!-- Dynamic Game Stage (Logo, Description, Actions & Activity Cards) -->
+    <section id="game-stage" class="game-stage-wrapper">
+      <!-- Rendered dynamically on focus change -->
+    </section>
+
+    <!-- Bottom Quick PS Button Trigger -->
+    <div id="btn-ps-home" class="ps-home-trigger" title="اضغط لفتح مركز التحكم">
+      <span class="ps-symbol">PS</span>
+      <span data-i18n-ar="مركز التحكم" data-i18n-en="Control Center">مركز التحكم</span>
+    </div>
+
+  </main>
+
+  <!-- PS5 Control Center (Bottom Sliding Dock) -->
+  <aside id="control-center-dock" class="control-center-dock">
+    <div class="cc-items-wrapper">
+      <button class="cc-item" onclick="ps5App.triggerControlCenterAction('home')" title="الرئيسية">
+        <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      </button>
+      <button class="cc-item" onclick="ps5App.triggerControlCenterAction('switcher')" title="المبدل والبحث">
+        <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+      </button>
+      <button class="cc-item" onclick="ps5App.triggerControlCenterAction('notifications')" title="الإشعارات">
+        <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+      </button>
+      <button class="cc-item" onclick="ps5App.triggerControlCenterAction('gamebase')" title="قاعدة الألعاب والأصدقاء">
+        <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+      </button>
+      <button class="cc-item" onclick="ps5App.triggerControlCenterAction('music')" title="الموسيقى">
+        <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+      </button>
+      <button class="cc-item" onclick="ps5App.triggerControlCenterAction('sound')" title="الصوت ومستوى الصوت">
+        <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+      </button>
+      <button class="cc-item" onclick="ps5App.triggerControlCenterAction('settings')" title="الإعدادات السريعة">
+        <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+      </button>
+      <button class="cc-item" onclick="ps5App.triggerControlCenterAction('power')" title="وضع السكون والطاقة">
+        <svg viewBox="0 0 24 24"><path d="M13 3h-2v10h2V3zm4.83 2.17l-1.42 1.42C17.99 7.86 19 9.81 19 12c0 3.87-3.13 7-7 7s-7-3.13-7-7c0-2.19 1.01-4.14 2.58-5.42L6.17 5.17C4.23 6.82 3 9.26 3 12c0 4.97 4.03 9 9 9s9-4.03 9-9c0-2.74-1.23-5.18-3.17-6.83z"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Settings Modal Dialog -->
+  <div id="settings-modal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h2 class="modal-title" data-i18n-ar="إعدادات واجهة التلفزيون والتحكم" data-i18n-en="TV & Controls Settings">إعدادات واجهة التلفزيون والتحكم</h2>
+        <button class="modal-close-btn" onclick="ps5App.closeAllModals()">✕</button>
+      </div>
+
+      <!-- Remote Control Sensitivity Section -->
+      <div class="settings-group">
+        <label class="settings-label" data-i18n-ar="🎯 سرعة وخفة حركة ماوس الريموت (Air Mouse Sensitivity)" data-i18n-en="🎯 Remote Mouse Sensitivity">🎯 سرعة وخفة حركة ماوس الريموت</label>
+        <div class="settings-options-row">
+          <button class="btn-setting-option" data-modal-nav="true" onclick="ps5App.setRemoteSensitivity('normal')">عادي (1.0x)</button>
+          <button class="btn-setting-option active" data-modal-nav="true" onclick="ps5App.setRemoteSensitivity('fast')">سريع وسلس (1.6x)</button>
+          <button class="btn-setting-option" data-modal-nav="true" onclick="ps5App.setRemoteSensitivity('ultra')">فائق السرعة (2.4x)</button>
+        </div>
+      </div>
+
+      <!-- Sound Effects Section -->
+      <div class="settings-group">
+        <label class="settings-label" data-i18n-ar="🔊 المؤثرات الصوتية لسوني 5 (PS5 Audio)" data-i18n-en="🔊 PS5 UI Sound Effects">🔊 المؤثرات الصوتية لسوني 5</label>
+        <div class="settings-options-row">
+          <button class="btn-setting-option active" data-modal-nav="true" onclick="ps5App.toggleSound()">تفعيل / كتم الصوت</button>
+        </div>
+      </div>
+
+      <!-- Display & Language Section -->
+      <div class="settings-group">
+        <label class="settings-label" data-i18n-ar="📺 وضع الشاشة واللغة" data-i18n-en="📺 Display & Language">📺 وضع الشاشة واللغة</label>
+        <div class="settings-options-row">
+          <button class="btn-setting-option" data-modal-nav="true" onclick="ps5App.toggleFullscreen()">ملء الشاشة للتلفزيون (TV Fullscreen)</button>
+          <button class="btn-setting-option" data-modal-nav="true" onclick="ps5App.toggleLanguage()">تغيير اللغة (Language Switch)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div id="search-modal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h2 class="modal-title" data-i18n-ar="البحث في الألعاب والوسائط" data-i18n-en="Search Games & Media">البحث في الألعاب والوسائط</h2>
+        <button class="modal-close-btn" onclick="ps5App.closeAllModals()">✕</button>
+      </div>
+      <input type="text" id="search-input" class="search-input-box" placeholder="اكتب اسم اللعبة أو التطبيق..." oninput="ps5App.filterSearch(this.value)" />
+      <div id="search-results" class="search-results-grid"></div>
+    </div>
+  </div>
+
+  <!-- Profile Modal -->
+  <div id="profile-modal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h2 class="modal-title" data-i18n-ar="ملف PlayStation التعريفي" data-i18n-en="PlayStation Profile">ملف PlayStation التعريفي</h2>
+        <button class="modal-close-btn" onclick="ps5App.closeAllModals()">✕</button>
+      </div>
+      <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 24px;">
+        <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=150&auto=format&fit=crop&q=80" style="width: 74px; height: 74px; border-radius: 50%; border: 3px solid #0070d1;" alt="Avatar" />
+        <div>
+          <h3 style="font-size: 1.6rem; font-weight: 800;">PlayStation_Gamer</h3>
+          <p style="color: #10b981; font-weight: 600; display: flex; align-items: center; gap: 6px;">
+            <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #10b981;"></span>
+            متصل الآن • اشتراك PlayStation Plus نشط
+          </p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; text-align: center;">
+        <div style="background: rgba(255,255,255,0.06); padding: 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+          <div style="font-size: 1.8rem; font-weight: 800; color: #ffda55;">428</div>
+          <div style="font-size: 0.85rem; color: var(--ps-text-dim);">مستوى الجوائز</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.06); padding: 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+          <div style="font-size: 1.8rem; font-weight: 800; color: #e5e7eb;">18</div>
+          <div style="font-size: 0.85rem; color: var(--ps-text-dim);">كؤوس بلاتينية 🏆</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.06); padding: 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+          <div style="font-size: 1.8rem; font-weight: 800; color: #ffd700;">124</div>
+          <div style="font-size: 0.85rem; color: var(--ps-text-dim);">كؤوس ذهبية 🥇</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Launcher Fullscreen Overlay Modal -->
+  <div id="game-launcher-modal" class="launcher-modal">
+    <div class="launcher-bg"></div>
+    <div class="launcher-content">
+      <div class="stage-ps-badge" style="width: fit-content;">PLAYING ON PS5</div>
+      <h1 class="launcher-game-title">Game Title</h1>
+      <p class="launcher-subtitle">Game subtitle</p>
+      <div class="launcher-progress-container">
+        <div class="launcher-progress-bar"></div>
+      </div>
+      <div class="launcher-exit-hint">
+        <span class="ps-circle-key">O</span>
+        <span data-i18n-ar="اضغط زر الرجوع (Back / Esc / O) للعودة للشاشة الرئيسية" data-i18n-en="Press Back / Esc / Circle to return to home">اضغط زر الرجوع (Back / Esc / O) للعودة للشاشة الرئيسية</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="ps5-toast-container"></div>
+
+  <!-- Script Modules (Fast, zero dependencies, pure Vanilla JS) -->
+  <script src="js/data.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/mouse-pointer.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
